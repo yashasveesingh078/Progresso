@@ -9,35 +9,30 @@ const App = () => {
   const [showModal, setShowModal] = useState(false);
   const [draggedTask, setDraggedTask] = useState(null);
   const [tasks, setTasks] = useState([]);
+  const [darkMode, setDarkMode] = useState(false);
   return (
-    <div className="min-h-screen bg-gray-100">
-      <Navbar setShowModal={setShowModal} />
+    <div className={darkMode ? "min-h-screen bg-gray-900" : "min-h-screen bg-gray-100"}>
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode}setShowModal={setShowModal}/>
       <Routes>
         <Route path="/"
           element={
-            <Dashboard tasks={tasks} />
+            <Dashboard tasks={tasks} darkMode={darkMode}/>
           }
         />
         <Route path="/tasks"
           element={
-            <Tasks
-              tasks={tasks}
-              setTasks={setTasks}
-              showModal={showModal}
-              setShowModal={setShowModal}
-              draggedTask={draggedTask}
-              setDraggedTask={setDraggedTask}
-            />
+            <Tasks tasks={tasks} setTasks={setTasks} showModal={showModal} setShowModal={setShowModal} draggedTask={draggedTask} setDraggedTask={setDraggedTask} darkMode={darkMode}/>
           }
         />
         <Route path="/heatmap"
           element={
-            <HeatmapPage tasks={tasks}/>
+            <HeatmapPage tasks={tasks} darkMode={darkMode}/>
           }
         />
-        <Route
-          path="/about"
-          element={<About />}
+        <Route path="/about"
+          element={
+            <About darkMode={darkMode} />
+          }
         />
       </Routes>
     </div>
