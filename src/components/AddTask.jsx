@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 const AddTask = ({ setShowModal, tasks, setTasks }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
