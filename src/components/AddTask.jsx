@@ -6,7 +6,6 @@ const AddTask = ({ setShowModal, tasks, setTasks }) => {
   const [priority, setPriority] = useState("Medium");
   const [dueDate, setDueDate] = useState("");
   const handleSubmit = (e) => {e.preventDefault()
-
     const newTask = {id: Date.now(),title,description,priority,dueDate,status: "pending",completedDate: null};
     setTasks([...tasks, newTask]);
     setShowModal(false);
