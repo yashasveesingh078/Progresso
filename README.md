@@ -1,101 +1,141 @@
-# <-------- Progresso ---------> #
+<----------------------------------------------- PROGRESSO -------------------------------------------->
 
 # Project Overview :
-Progresso is a React-based web application designed to track and visualize user productivity through an interactive heatmap driven by task completion. Instead of manually logging activity, the system automatically updates daily activity based on completed tasks.
-
-The project is inspired by GitHub’s contribution graph and extends it by integrating a Kanban-style task management system. This allows users to manage daily tasks while simultaneously visualizing their consistency and progress over time.
+Progresso is a React-based productivity tracking web application that combines task management with an interactive heatmap visualization system. The project helps users manage daily tasks using a Kanban-style interface while simultaneously visualizing productivity and consistency over time.
+The application is inspired by GitHub’s contribution graph and extends it by integrating drag-and-drop task management, real-time heatmap updates, dark/light theme switching, and multiple pages using React Router.
+The project is designed with a modern aesthetic UI using Tailwind CSS and supports responsive layouts for a clean user experience.
 
 # Objectives :
-
-* To track daily productivity through task completion
-* To represent activity using color intensity (heatmap visualization)
-* To help users analyze consistency, streaks, and performance trends
-* To integrate task management with visual progress tracking
-* To demonstrate core concepts of JavaScript, React, and Tailwind CSS
+* To track daily productivity through completed tasks
+* To visualize productivity using a heatmap system
+* To implement drag-and-drop task management
+* To analyze consistency and activity trends
+* To build a multi-page React application
+* To practice React hooks, routing, conditional rendering, and state management
+* To create a modern responsive UI using Tailwind CSS
 
 # Features :
 
---> Heatmap Visualization:
-* Displays activity data for the last 30 days
-* Each day is represented as a square in a grid
-* Color intensity reflects number of tasks completed on that day
+--> Multi-Page Application :
+* Dashboard Page
+* Tasks Page
+* Heatmap Analytics Page
+* About Page
+* Navigation using React Router DOM
 
---> Task Management System (Kanban Board):
-* Users can create tasks for daily activities
-* Tasks are organized into columns such as Pending and Completed
-* Tasks can be moved between columns using interaction controls
+--> Task Management System :
+* Add new tasks using modal form
+* Task title, description, priority, and due date support
+* Separate Pending and Completed sections
+* Drag and drop functionality between sections
+* Completed tasks visually appear crossed out
+* Completed task cards change color dynamically
 
---> Activity Tracking Integration:
-* Completing a task automatically updates the activity count for that day
-* Moving a task back reduces the activity count accordingly
-* Eliminates the need for manual activity input
+--> Productivity Heatmap :
+* Displays activity for the last 30 days
+* Heatmap updates dynamically based on completed tasks
+* Only the current day updates in real-time
+* Previous days contain fixed random productivity data
+* Hover tooltips display: date,number of completed tasks
+* Dynamic color intensity based on task count
 
---> Dynamic Color Coding:
-* Light color → low or no activity
-* Medium color → moderate activity
-* Dark color → high activity
-* Colors update dynamically based on completed tasks
+--> Theme Toggle :
+* Light Mode
+* Dark Mode
+* Dynamic UI color switching
+* Fully responsive dark theme styling
 
---> Streak Calculation:
-* Calculates current streak based on consecutive active days
-* Calculates longest streak
-* Encourages consistent performance
+--> Dynamic UI Features :
+* Floating Add Task button
+* Responsive layout
+* Gradient-based modern UI
+* Interactive hover effects
+* Aesthetic pink-purple theme
 
---> Statistics Dashboard:
-* Total completed tasks
-* Average daily activity
-* Current and maximum streak
-
---> Data Persistence:
-* Uses browser localStorage to store user data
-* Data remains available after page refresh
-
---> Interactive UI:
-* Task cards and structured columns for task management
-* Clickable controls for moving tasks
-* Hover tooltips displaying date and activity
-* Clean and responsive layout using Tailwind CSS
+--> Statistics Dashboard :
+* Total Tasks
+* Completed Tasks
+* Pending Tasks
+* Productivity insights section
 
 # Tech Stack :
 
---> React:
-* Functional components
-* useState for managing tasks and activity data
-* useEffect for syncing data with localStorage
-* Component-based architecture
+--> React JS :
+* Functional Components
+* useState Hook
+* useMemo Hook
+* Conditional Rendering
+* Props
+* Component-Based Architecture
 
---> JavaScript:
-* Date manipulation (generating last 30 days)
-* Conditional logic for color mapping
-* Array methods for task filtering and updates
-* Streak and statistical calculations
+--> React Router DOM :
+* Multi-page navigation
+* Route-based rendering
 
---> Tailwind CSS:
-* Grid-based layout for heatmap
-* Flex-based layout for Kanban board
-* Utility-first styling approach
-* Responsive and modern UI design
+--> JavaScript :
+* Arrays and Objects
+* Array Methods
+* Conditional Logic
+* Date Manipulation
+* Drag-and-Drop Events
+* Dynamic State Updates
 
-# Core Logic
+--> Tailwind CSS :
+* Utility-first styling
+* Responsive layouts
+* Gradient themes
+* Dark mode UI
+* Modern card-based design
 
-* Generate last 30 days dynamically using JavaScript Date
-* Store tasks and activity data in structured format -->
+# Core Logic :
 
-Tasks:
+--> Tasks Structure :
 {
-id: 1,
-title: "Task Example",
-status: "completed",
-date: "2026-04-28"
+  id: 1,
+  title: "Complete Assignment",
+  description: "Solve React questions",
+  priority: "High",
+  dueDate: "2026-05-10",
+  status: "completed",
+  completedDate: "2026-05-09"
 }
 
-Activity:
-{
-"2026-04-28": 3
-}
+--> Heatmap Logic :
+* Previous 29 days use fixed random activity data
+* Current day updates dynamically
+* Completed tasks increase current day activity
+* Activity count determines color intensity
 
-* Update activity automatically when a task is marked as completed
-* Map activity values to different color intensities
-* Calculate streaks using consecutive date comparison
+--> Drag and Drop Logic :
+* Tasks are draggable
+* Pending → Completed updates task status
+* Completed → Pending restores task status
+* Heatmap updates automatically when status changes
 
+# Folder Structure :
+src
+│
+├── components
+│   ├── AddTask.jsx
+│   ├── CompletedTasks.jsx
+│   ├── Heatmap.jsx
+│   ├── Navbar.jsx
+│   ├── PendingTasks.jsx
+│   └── TaskCard.jsx
+│
+├── pages
+│   ├── About.jsx
+│   ├── Dashboard.jsx
+│   ├── HeatmapPage.jsx
+│   └── Tasks.jsx
+│
+├── App.jsx
+├── main.jsx
+└── index.css
 
+# Developed Using :
+* React JS
+* JavaScript
+* Tailwind CSS
+* React Router Dom
+* Drag and Drop 
