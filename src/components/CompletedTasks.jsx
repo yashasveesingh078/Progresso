@@ -18,7 +18,7 @@ const CompletedTasks = ({tasks,setTasks,draggedTask,setDraggedTask,darkMode}) =>
       <div className="space-y-4">
         {
           completedTasks.length > 0 ? 
-          (completedTasks.map((task) => (<TaskCard key={task.id} task={task}setDraggedTask={setDraggedTask}/>)))
+          (completedTasks.map((task) => (<TaskCard key={task.id} task={task} setDraggedTask={setDraggedTask}/>)))
            : 
           (<div className={`${darkMode ? "bg-gray-700 text-gray-300 border-gray-600" : "bg-white text-gray-500 border-gray-300"} rounded-2xl p-8 text-center border border-dashed`}>Drag completed tasks here</div>)
         }

@@ -12,7 +12,7 @@ const App = () => {
   const [darkMode, setDarkMode] = useState(false);
   return (
     <div className={darkMode ? "min-h-screen bg-gray-900" : "min-h-screen bg-gray-100"}>
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode}setShowModal={setShowModal}/>
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} setShowModal={setShowModal}/>
       <Routes>
         <Route path="/"
           element={
